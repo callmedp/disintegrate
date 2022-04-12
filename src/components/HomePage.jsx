@@ -11,11 +11,10 @@ const HomePage = () => {
         const cookieToken = getCookie('token')
 
         if(cookieToken === null || cookieToken === '' || cookieToken === undefined) {
-
+            console.log("cookie token")
             if(store.isAutheticated) {
                 //functionality to logout
                 store.clear();
-                return;
             }
 
             return window.location.href = `${DYNAMIC_SITE}/?redirect=static_site`;

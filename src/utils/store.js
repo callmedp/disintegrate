@@ -1,8 +1,20 @@
 
 const store = {
-    isAuthenticated : false,
+    set isAuthenticated(flag) {
+        localStorage.setItem('authenticated', flag)
+    },
+    get isAuthenticated() {
+        try {
+            return JSON.parse(localStorage.getItem('authenticated'))
+        }
+        catch {
+            return false
+        }
+    },
     clear() {
+        this.isAuthenticated = false
         localStorage.clear()
+        console.log("localstore", localStorage.getItem('userDetail'))
     },
     set(data) {
         localStorage.setItem('userDetail', JSON.stringify(data))
@@ -13,7 +25,9 @@ const store = {
         try{
             user = JSON.parse(localStorage.getItem('userDetail'))['name']
         }
-        catch(e){}
+        catch(e){
+            console.log("user get name")
+        }
 
         return user;
     }

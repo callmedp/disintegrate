@@ -6,7 +6,7 @@ const Middleware = (props) => {
 
     const { routes } = props;
     const cookieToken = getCookie('token')
-//    console.log("cookie Toek", cookieToken)
+   console.log("cookie Toek", store.isAuthenticated)
 
     if((cookieToken === null || cookieToken === '' || cookieToken === undefined) && store.isAuthenticated) {
 
