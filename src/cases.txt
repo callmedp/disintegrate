@@ -1,0 +1,15 @@
+cases:
+
+Login Click:
+
+cookie && store -> pass /
+!cookie && store -> logout /
+!cookie && !store -> redirect /
+cookie && !store -> api call /
+
+MiddleWare functionality:
+
+cookie && store -> pass 
+!cookie && store -> logout 
+!cookie && !store -> pass 
+cookie && !store -> api call 
