@@ -16,9 +16,8 @@ const Middleware = (props) => {
     
     if(!store.isAuthenticated && cookieToken) {
         //api call to save user data into store
-        console.log("setting")
         store.set({name: 'Divyanshu'})
-        console.log("store valiue", store)
+        
     }
     
     return (
