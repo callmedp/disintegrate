@@ -20,6 +20,7 @@ const Middleware = (props) => {
         
     }
     
+    console.log("Rotes mapped to render")
     return (
         routes.map((route, index) => <Route key={index} exact={route.exact} path={route.path} render={(props) => <route.component {...props} />} />)
     )

@@ -10,6 +10,7 @@ function App() {
   return (
     <Router > 
     <AppRoutes />
+   
     </Router >
   );
 }

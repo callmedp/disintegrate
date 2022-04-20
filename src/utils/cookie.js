@@ -14,3 +14,15 @@ export const getCookie = (cname) => {
     }
     return null;
   }
+
+
+  export const getCookieData = () => {
+    
+    return {
+      action: getCookie('action'),
+      apikey:  getCookie('apikey'),
+      checksum:  getCookie('checksum'),
+      refresh_token: getCookie('refresh_token'),
+      username: getCookie('username')
+    }
+}

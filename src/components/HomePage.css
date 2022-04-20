@@ -16,3 +16,10 @@
     margin-right: 10px;
 }
     
+.if {
+    
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    right: 80px;
+}
