@@ -33,7 +33,7 @@ const HomePage = () => {
 
         if(!store.isAutheticated) {
                 
-            store.set({name: 'Divyanshu'})
+            store.set({name: cookieToken})
             return;
         }
     }
