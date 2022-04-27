@@ -1,10 +1,9 @@
 import './HomePage.css'
-import { getCookie } from '../utils/cookie'
+import { getCookie, deleteCookie } from '../utils/cookie'
 import store from '../utils/store'
 import { dynamicSite } from '../utils/urls'
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { userInfoThunk } from '../store/homepage/thunk';
+import { useState } from 'react';
+
 
 const HomePage = () => {
     console.log("HomeContainer")
@@ -42,11 +41,21 @@ const HomePage = () => {
     const handleLogin = () => {
         setShowLogin(true);
         cookieStoreHandler('login')
+       
     }
 
     const handleSignup = () => {
         setShowSignup(true);
         cookieStoreHandler('signup')
+    }
+
+    const handleLogout = () => {
+        console.log("logout clicked")
+        store.clear();
+        deleteCookie('token');
+        deleteCookie('loginData');
+        deleteCookie('isSession');
+        window.location.reload();
     }
     
     return (
@@ -57,7 +66,8 @@ const HomePage = () => {
             </p>
             <div className="l-btn">
            { store.isAuthenticated ? 
-            <h2>Hello {store.username}</h2> :
+            <><h2>Hello {store.username}</h2> 
+            <button className="btnx" onClick={handleLogout}>Logout</button></>:
           
             showLogin ? '' : showSignup ? '' : <><button className="btnx" onClick={handleLogin}>
                 Login   

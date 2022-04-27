@@ -23,3 +23,9 @@
     width: 30%;
     right: 80px;
 }
+
+.lout-btn {
+    margin-left: 20px;
+    border:5px solid  red;   
+    border-radius: 5px; 
+}
